@@ -135,12 +135,11 @@
         jackpot = 5000;
         turn = 0;
         playerBet = 0;
-        winNumber = 0;
-        lossNumber = 0;
+        win= 0;
+        loss = 0;
         winRatio = 0;
     }
-
-    
+ /*Function for checking the jackpot*/
     function jackPotCheck() 
     {
         // compare two random values 
@@ -303,14 +302,12 @@
         });
         quitButton.on("click", () => {
             console.log("quitButton Button Clicked");
-            spins = 0;
+            turn = 0;
             win = 0;
             loss = 0;
-            jackpotWins = 0;
-            jackpot = 00000000;
             playerBet = 0;
             winnings = 0;
-            credits = 0000;
+            credits = 0;
             //spinButton.addEventListener("click", spinButton);
             alert
             (
@@ -325,13 +322,11 @@
             console.log("resetButton Button Clicked");
             resetFruitTally();
             resetAllStats();
-            //spinButton.addEventListener("click", spinButton);
             betLabel.text = playerBet.toString();
             creditLabel.text = credits.toString();
             winningsLabel.text= winnings.toString();
         });
     }
-    // This function calculates the player's winnings, if any 
     /* This function calculates the player's winnings, if any */
     function determineWinnings() 
     {
