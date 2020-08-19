@@ -1,3 +1,10 @@
+/* 
+* Project Name: COMP125-M2020-Assignment 4
+* Author Name: Aakriti Gupta
+* Student ID: 301103413
+* Website Name: Slot Machine
+* File Description: Here lies all the functionality of the website
+*/
 var Core;
 (function (Core) {
     class GameObject extends createjs.Bitmap {

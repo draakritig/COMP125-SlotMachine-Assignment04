@@ -1,4 +1,12 @@
-(function(){
+/* 
+* Project Name: COMP125-M2020-Assignment 4
+* Author Name: Aakriti Gupta
+* Student ID: 301103413
+* Website Name: Slot Machine
+* File Description: Here lies all the functionality of the website
+*/
+(function()
+{
     // Function scoped Variables
     let stage: createjs.Stage;
     let assets: createjs.LoadQueue;
@@ -27,7 +35,8 @@
     let sevens = 0;
     let blanks = 0;
 
-    let manifest: Core.Item[] = [
+    let manifest: Core.Item[] = 
+    [
         {id:"background", src:"./Assets/images/background.png"},
         {id:"banana", src:"./Assets/images/banana.gif"},
         {id:"bar", src:"./Assets/images/bar.gif"},
@@ -66,9 +75,7 @@
         createjs.Ticker.on("tick", Update);
 
         stage.enableMouseOver(20);
-
         Config.Globals.AssetManifest = assets;
-
         Main();
     }
 
@@ -198,16 +205,8 @@
             rightReel.image = assets.getResult(reels[2]) as HTMLImageElement;
         });
 
-        bet1Button.on("click", ()=>{
-            console.log("bet1Button Button Clicked");
-        });
-
         bet10Button.on("click", ()=>{
             console.log("bet10Button Button Clicked");
-        });
-
-        bet100Button.on("click", ()=>{
-            console.log("bet100Button Button Clicked");
         });
 
         betMaxButton.on("click", ()=>{
@@ -219,7 +218,6 @@
     function Main():void
     {
         buildInterface();
-
         interfaceLogic();
        
     }
