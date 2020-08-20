@@ -7,15 +7,17 @@
 */
 (function()
 {
-    // Function scoped Variables
+    // Game Variables
     let stage: createjs.Stage;
     let assets: createjs.LoadQueue;
     let slotMachineBackground: Core.GameObject;
+    // Game Buttons
     let spinButton: UIObjects.Button;
     let bet10Button: UIObjects.Button;
     let resetButton: UIObjects.Button;
     let quitButton: UIObjects.Button;
     let betMaxButton: UIObjects.Button;
+    //Game Labels
     let jackPotLabel: UIObjects.Label;
     let creditLabel: UIObjects.Label;
     let winningsLabel: UIObjects.Label;
@@ -24,8 +26,7 @@
     let middleReel: Core.GameObject;
     let rightReel: Core.GameObject;
     let betLine: Core.GameObject;
-
-     // -----------------------Player Stats----------------------------
+     // Player Stats
      let playerBet = 0;
      let winnings = 0;
      let credits = 1000;
@@ -34,8 +35,7 @@
      let loss = 0;
      let winRatio =0;
      let turn =0;
-
-    // symbol tallies
+    // Symbol tallies
     let grapes = 0;
     let bananas = 0;
     let oranges = 0;
@@ -88,7 +88,7 @@
         Main();
     }
 
-    // called every frame
+    // This function calls every frame
     function Update():void
     {
         stage.update();
@@ -220,7 +220,6 @@
         // Slot Machine Background
         slotMachineBackground = new Core.GameObject("background", Config.Screen.CENTER_X, Config.Screen.CENTER_Y, true );
         stage.addChild(slotMachineBackground);
-
         // Buttons
         spinButton = new UIObjects.Button("spinButton", Config.Screen.CENTER_X + 135, Config.Screen.CENTER_Y + 176, true);
         stage.addChild(spinButton);
@@ -232,16 +231,6 @@
         stage.addChild(resetButton);
         quitButton = new UIObjects.Button("quitButton", Config.Screen.CENTER_X - 135, Config.Screen.CENTER_Y + 176, true);
         stage.addChild(quitButton);
-
-        // Labels
-        jackPotLabel = new UIObjects.Label("99999999", "20px", "Consolas", "#FF0000", Config.Screen.CENTER_X, Config.Screen.CENTER_Y - 175, true);
-        stage.addChild(jackPotLabel);
-        creditLabel = new UIObjects.Label("99999999", "20px", "Consolas", "#FF0000", Config.Screen.CENTER_X - 94, Config.Screen.CENTER_Y + 108, true);
-        stage.addChild(creditLabel);
-        winningsLabel = new UIObjects.Label("99999999", "20px", "Consolas", "#FF0000", Config.Screen.CENTER_X + 94, Config.Screen.CENTER_Y + 108, true);
-        stage.addChild(winningsLabel);
-        betLabel = new UIObjects.Label("9999", "20px", "Consolas", "#FF0000", Config.Screen.CENTER_X, Config.Screen.CENTER_Y + 108, true);
-        stage.addChild(betLabel);
 
          // Labels
          jackPotLabel = new UIObjects.Label("5000", "20px", "Consolas", "#FF0000", Config.Screen.CENTER_X, Config.Screen.CENTER_Y - 175, true);
@@ -324,7 +313,6 @@
             playerBet = 0;
             winnings = 0;
             credits = 0;
-            //spinButton.addEventListener("click", spinButton);
             alert
             (
             `Thank You For Playing the Game! 
@@ -408,12 +396,11 @@
         }
     }
 
-    // app logic goes here
+    // Game logic goes here
     function Main():void
     {
         buildInterface();
-        interfaceLogic();
-       
+        interfaceLogic();       
     }
 
     window.addEventListener("load", Preload);
